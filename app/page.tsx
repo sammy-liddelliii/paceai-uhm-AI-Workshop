@@ -17,6 +17,15 @@ export default function Home() {
 
       <main>
         <section>
+          <h2>This semester</h2>
+          <ul>
+            {thisSemester.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </section>
+
+        <section>
           <h2>About</h2>
           <p>
             I&apos;m a freshman at the University of Hawaiʻi at Mānoa, studying
@@ -25,19 +34,10 @@ export default function Home() {
             I&apos;ll share what I&apos;m learning along the way.
           </p>
         </section>
-
-        <section>
-          <h2>This semester</h2>
-          <ul>
-            {thisSemester.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </section>
       </main>
 
       <footer>
-        <p>© {new Date().getFullYear()} Sammy Liddell</p>
+        <p>© {new Date().getFullYear()} Sammy Liddell · Built with Claude Code</p>
       </footer>
     </>
   );
