@@ -2,7 +2,7 @@
 Last updated: 2026-10-13
 
 ## Works
-- GitHub repository sammy-liddelliii/AI-Workshop exists, default branch main.
+- GitHub repository sammy-liddelliii/paceai-uhm-AI-Workshop exists, default branch main.
 - A Vercel project named SALVATAR and a Supabase project at https://tmwcyfhdltiitsnsoixb.supabase.co exist, per my project notes. Not checked this session.
 - Planning docs added: roadmap.md, project-state.md, CLAUDE.md.
 
