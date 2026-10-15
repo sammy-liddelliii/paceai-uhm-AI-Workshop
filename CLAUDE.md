@@ -1,6 +1,6 @@
 # SALVATAR
 
-A study task list for language learners: sign in, add study tasks tagged by skill, see which skill you have been avoiding. Repository: sammy-liddelliii/AI-Workshop.
+A study task list for language learners: sign in, add study tasks tagged by skill, see which skill you have been avoiding. Repository: sammy-liddelliii/paceai-uhm-AI-Workshop.
 
 ## Stack
 - Next.js with the App Router, TypeScript
