@@ -1,25 +1,24 @@
 # Project state
-Last updated: 2026-10-13
+Last updated: 2026-10-15
 
 ## Works
 - GitHub repository sammy-liddelliii/AI-Workshop exists, default branch main.
-- A Vercel project named SALVATAR and a Supabase project at https://tmwcyfhdltiitsnsoixb.supabase.co exist, per my project notes. Not checked this session.
-- Planning docs added: roadmap.md, project-state.md, CLAUDE.md.
+- Production site: https://salvatar.vercel.app (Vercel project SALVATAR). Supabase project at https://tmwcyfhdltiitsnsoixb.supabase.co.
+- Planning docs: roadmap.md, project-state.md, CLAUDE.md.
+- Slice 1 (sign up and log in) is live on the production site. All four done-criteria checks (a)-(d) passed on 2026-10-15.
 
 ## Broken or flaky
-- No features exist yet: no sign-up, no tasks.
-- Unknown whether the repository already contains a Next.js app. The first Slice 1 session checks and reports before changing anything.
-- The URL recorded as the live site (https://paceai-uhm-ai-workshop-git-claude-amazing-br-a128d4-sammyl-9193.vercel.app) looks like a preview of one branch, not the production site. Confirm the production URL in Vercel > SALVATAR > Settings > Domains.
+- No task features exist yet: no adding, saving, or completing tasks.
+- package.json has no lint script, so `npm run lint` (listed in CLAUDE.md) does not work. Only dev, build, and start exist.
 
 ## Environment notes
 - Stack: Next.js (App Router), TypeScript, plain CSS, Supabase, deployed on Vercel.
 - Every pushed branch gets a Vercel preview link on its pull request; merging to main deploys the live site.
 - Keys and passwords live only in Vercel > SALVATAR > Settings > Environment Variables. Never in chat, prompts, or repository files.
-- Slice 1 will need the Supabase project URL and public key set there as environment variables; exact names to confirm when Slice 1 starts.
+- Supabase client libraries (@supabase/supabase-js and @supabase/ssr) are installed.
 - Supabase's built-in email sender has a low hourly limit, so confirmation emails may stop arriving during heavy testing. Space out test sign-ups.
 - Only fake names and fake content in the app.
 
 ## Next session
-- Start Slice 1 (sign up and log in) in a new Claude Code session.
-- Decide when asked: approve adding the Supabase client libraries (@supabase/supabase-js and @supabase/ssr).
-- Confirm the production URL and update the project instructions.
+- Start Slice 2 (tasks that stay) in a new Claude Code session. It needs a tasks table with row level security; the SQL goes in the pull request for me to run in the Supabase SQL editor.
+- Decide: add a lint script to package.json, or remove `npm run lint` from CLAUDE.md (docs session).
