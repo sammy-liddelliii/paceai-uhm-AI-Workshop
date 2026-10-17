@@ -1,3 +1,8 @@
+import AddTaskForm from "./_lib/AddTaskForm";
+import TaskItem from "./_lib/TaskItem";
+import { createClient } from "./_lib/supabase-server";
+import type { Task } from "./_lib/task-actions";
+
 // Edit this list to update the "This semester" section.
 const thisSemester = [
   "Taking an intro programming course",
@@ -5,7 +10,24 @@ const thisSemester = [
   "Joining a hands-on engineering club",
 ];
 
-export default function Home() {
+export default async function Home() {
+  // Signed-in visitors see their study tasks at the top of the page.
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  let tasks: Task[] = [];
+  if (user) {
+    // Row level security means this only ever returns the signed-in user's
+    // own tasks, even though the query doesn't filter by user.
+    const { data } = await supabase
+      .from("tasks")
+      .select("id, text, done")
+      .order("created_at", { ascending: true });
+    tasks = data ?? [];
+  }
+
   return (
     <>
       <header className="hero">
@@ -16,6 +38,22 @@ export default function Home() {
       </header>
 
       <main>
+        {user && (
+          <section>
+            <h2>My study tasks</h2>
+            <AddTaskForm />
+            {tasks.length === 0 ? (
+              <p className="muted">No tasks yet. Add one above.</p>
+            ) : (
+              <ul className="task-list">
+                {tasks.map((task) => (
+                  <TaskItem key={task.id} task={task} />
+                ))}
+              </ul>
+            )}
+          </section>
+        )}
+
         <section>
           <h2>This semester</h2>
           <ul>
