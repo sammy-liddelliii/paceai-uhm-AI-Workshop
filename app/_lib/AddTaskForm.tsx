@@ -1,10 +1,12 @@
 "use client";
 
 import { useActionState } from "react";
+import { SKILLS } from "./skills";
 import { addTask } from "./task-actions";
 
-// The "add box" above the task list. React clears the text box after each
-// submit; useActionState keeps an error message on screen if saving failed.
+// The "add box" above the task list, with a dropdown to pick the task's skill.
+// React clears the form after each submit; useActionState keeps an error
+// message on screen if saving failed.
 export default function AddTaskForm() {
   const [state, formAction, pending] = useActionState(addTask, {
     error: null,
@@ -23,6 +25,30 @@ export default function AddTaskForm() {
         placeholder="e.g. Read one news article"
         autoComplete="off"
       />
+      <label htmlFor="new-task-skill" className="visually-hidden">
+        Skill
+      </label>
+      <select
+        id="new-task-skill"
+        name="skill"
+        required
+        defaultValue=""
+        // Without a skill the browser refuses to submit and shows this
+        // message, so the typed text is kept and no task is added.
+        onInvalid={(e) =>
+          e.currentTarget.setCustomValidity("Pick a skill for this task.")
+        }
+        onChange={(e) => e.currentTarget.setCustomValidity("")}
+      >
+        <option value="" disabled>
+          Skill…
+        </option>
+        {SKILLS.map((skill) => (
+          <option key={skill} value={skill}>
+            {skill}
+          </option>
+        ))}
+      </select>
       <button type="submit" disabled={pending}>
         {pending ? "Adding…" : "Add"}
       </button>

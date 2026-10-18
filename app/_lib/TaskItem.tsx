@@ -22,6 +22,7 @@ export default function TaskItem({ task }: { task: Task }) {
           />
           <span className="visually-hidden">Done: </span>
           <span className="task-text">{task.text}</span>
+          {task.skill && <span className="skill-tag">{task.skill}</span>}
         </label>
       </form>
     </li>
