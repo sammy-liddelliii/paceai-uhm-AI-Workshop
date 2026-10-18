@@ -11,6 +11,11 @@ Last updated: 2026-10-18
 - A person can sign out, and a "Log in" link appears where their email was.
 - If a person logs in with the wrong password, they see an error message and stay on the log-in page.
 - A person who closes the tab and opens the site again is still signed in.
+- Slice 2 (tasks that stay) is live on the production site.
+- Once signed in, a person can type a study task into the add box and press Add, and it appears in their list.
+- A person's tasks are still there after they reload the page or sign out and back in.
+- A person can tick a task's Done checkbox, and it stays ticked after a reload.
+- A person sees only their own tasks, never another account's.
 
 ## Broken or flaky
 - No task features exist yet: no adding, saving, or completing tasks.
