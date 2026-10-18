@@ -1,5 +1,6 @@
 import AddTaskForm from "./_lib/AddTaskForm";
 import TaskItem from "./_lib/TaskItem";
+import { summarizeSkills } from "./_lib/skills";
 import { createClient } from "./_lib/supabase-server";
 import type { Task } from "./_lib/task-actions";
 
@@ -23,10 +24,11 @@ export default async function Home() {
     // own tasks, even though the query doesn't filter by user.
     const { data } = await supabase
       .from("tasks")
-      .select("id, text, done")
+      .select("id, text, done, skill, done_at")
       .order("created_at", { ascending: true });
     tasks = data ?? [];
   }
+  const summary = summarizeSkills(tasks, Date.now());
 
   return (
     <>
@@ -42,6 +44,18 @@ export default async function Home() {
           <section>
             <h2>My study tasks</h2>
             <AddTaskForm />
+
+            <h3>Finished in the last 7 days</h3>
+            <ul className="skill-summary">
+              {summary.map(({ skill, count, avoiding }) => (
+                <li key={skill} className={avoiding ? "avoiding" : undefined}>
+                  <span>{skill}</span>
+                  <span className="skill-count">{count}</span>
+                  {avoiding && <span className="avoiding-label">Avoiding</span>}
+                </li>
+              ))}
+            </ul>
+
             {tasks.length === 0 ? (
               <p className="muted">No tasks yet. Add one above.</p>
             ) : (
