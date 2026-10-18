@@ -2,7 +2,7 @@
 Last updated: 2026-10-18
 
 ## Works
-- GitHub repository sammy-liddelliii/AI-Workshop exists, default branch main.
+- GitHub repository sammy-liddelliii/paceai-uhm-AI-Workshop exists, default branch main.
 - Production site: https://salvatar.vercel.app (Vercel project SALVATAR). Supabase project at https://tmwcyfhdltiitsnsoixb.supabase.co.
 - Planning docs: roadmap.md, project-state.md, CLAUDE.md.
 - Slice 1 (sign up and log in) is live on the production site. All four done-criteria checks (a)-(d) passed on 2026-10-15.
