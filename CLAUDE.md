@@ -21,7 +21,6 @@ Run from the repository root. These exist only once package.json exists; if one 
 - Change auth configuration without saying what is changing and why.
 - Create new top-level folders. If work seems to need one, stop and ask me.
 - Add a new library, service, or account without asking first.
-- Merge a pull request. Push the branch, open a draft pull request, and stop.
 - Edit roadmap.md, project-state.md, or CLAUDE.md during feature work. Only a separate docs session edits them.
 - Put passwords, API keys, or connection strings in code, prompts, or any file in the repository.
 - Use real personal data. Fake names and fake content only.
