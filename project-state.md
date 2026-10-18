@@ -18,7 +18,6 @@ Last updated: 2026-10-18
 - A person sees only their own tasks, never another account's.
 
 ## Broken or flaky
-- No task features exist yet: no adding, saving, or completing tasks.
 - package.json has no lint script, so `npm run lint` (listed in CLAUDE.md) does not work. Only dev, build, and start exist.
 
 ## Environment notes
