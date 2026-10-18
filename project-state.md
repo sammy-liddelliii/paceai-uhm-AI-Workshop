@@ -1,11 +1,16 @@
 # Project state
-Last updated: 2026-10-15
+Last updated: 2026-10-18
 
 ## Works
 - GitHub repository sammy-liddelliii/AI-Workshop exists, default branch main.
 - Production site: https://salvatar.vercel.app (Vercel project SALVATAR). Supabase project at https://tmwcyfhdltiitsnsoixb.supabase.co.
 - Planning docs: roadmap.md, project-state.md, CLAUDE.md.
 - Slice 1 (sign up and log in) is live on the production site. All four done-criteria checks (a)-(d) passed on 2026-10-15.
+- On the live site, a person can create an account with an email and a password, and they are signed in straight away.
+- Once signed in, the site shows "Signed in as" followed by their email.
+- A person can sign out, and a "Log in" link appears where their email was.
+- If a person logs in with the wrong password, they see an error message and stay on the log-in page.
+- A person who closes the tab and opens the site again is still signed in.
 
 ## Broken or flaky
 - No task features exist yet: no adding, saving, or completing tasks.
