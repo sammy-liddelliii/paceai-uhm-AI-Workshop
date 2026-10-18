@@ -16,6 +16,12 @@ Last updated: 2026-10-18
 - A person's tasks are still there after they reload the page or sign out and back in.
 - A person can tick a task's Done checkbox, and it stays ticked after a reload.
 - A person sees only their own tasks, never another account's.
+- Slice 3 (skill tags and the avoided skill) is live on the production site.
+- When adding a task, a person must pick one of six skills from a dropdown: Reading, Writing, Listening, Speaking, Vocabulary, or Grammar. If they press Add without picking one, they see "Pick a skill for this task." and no task is added.
+- Each task in the list shows the skill it was tagged with.
+- Under the add box, a "Finished in the last 7 days" summary shows how many tasks the person finished in each of the six skills over the last 7 days.
+- The skill with the lowest count is labeled "Avoiding". If several skills tie for lowest, all of them get the label.
+- Tasks added before slice 3 have no skill, so they do not count in the summary.
 
 ## Broken or flaky
 - package.json has no lint script, so `npm run lint` (listed in CLAUDE.md) does not work. Only dev, build, and start exist.
